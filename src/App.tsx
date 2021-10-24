@@ -2,6 +2,15 @@ import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+interface IState{
+  people: {
+    name: string;
+    age: number;
+    url: string;
+    note?: string;
+  }[]
+}
+
 function App() {
   // const [number, setNumber] = useState<number>(5); //will be inferred, but just showing how it should look
 
@@ -9,12 +18,12 @@ function App() {
   //   setNumber("10");
   // }
 
-  const [people, setPeople] = useState([{
-    name: "Juan Nuñez",
-    url: "https://www.linkedin.com/in/juan-nunez89/",
-    age: 31,
-    note: "random note that I am writing for this practice"
-  }])
+  const [people, setPeople] = useState<IState["people"]>([])
+
+  // people.map(person => {
+  //   person.age = 10
+  // })
+  
   return (
     <div className="App">
       <h1>People Invited to my Party</h1>
