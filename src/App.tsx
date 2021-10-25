@@ -19,7 +19,14 @@ function App() {
   //   setNumber("10");
   // }
 
-  const [people, setPeople] = useState<IState["people"]>([])
+  const [people, setPeople] = useState<IState["people"]>([
+    {
+      name: "Juan Nunez",
+      age: 31,
+      url: "www.google.com",
+      note: "note stuff"
+    }
+  ])
 
   // people.map(person => {
   //   person.age = 10
